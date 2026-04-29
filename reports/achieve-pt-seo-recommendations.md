@@ -277,6 +277,55 @@ Each is a thin page (200-300 words) saying you serve that area + what you offer 
 
 ---
 
+---
+
+## CRITICAL FINDING: How Athletico Actually Ranks
+
+After mapping Athletico's full site structure, we discovered **why they dominate local search**: they have 6 dedicated condition + location combination pages for Barrington specifically:
+
+- `/locations/barrington/barrington-back-pain-therapy`
+- `/locations/barrington/barrington-knee-pain-therapy`
+- `/locations/barrington/barrington-hip-pain-therapy`
+- `/locations/barrington/barrington-physical-therapy`
+- `/locations/barrington/barrington-pelvic-health-therapy`
+- `/locations/barrington/barrington-occupational-therapy`
+
+**These pages do 3 things Achieve PT's site doesn't:**
+
+1. **Exact-match title tags** — e.g. `"Back Pain Therapy Services Barrington IL | Athletico Barrington"` — Google pattern-matches this directly to search queries like "back pain therapy Barrington IL"
+
+2. **Hyper-local body copy** — They name specific Barrington landmarks by name: Citizens Park, Makray Memorial Golf Course, Lake Zurich, Main Street. Google's local algorithm scores pages higher when they demonstrate genuine local relevance beyond just the city name in the title. Example from their back pain page:
+   > *"Whether you're walking the trails at Citizens Park in the fall, shoveling snow in the winter, tending your garden in the spring, or taking the grandkids to Lake Zurich in the summer..."*
+
+3. **Seasonal relevance signals** — They connect conditions to Barrington-specific seasonal activities (icy sidewalks in winter, gardening in spring, golf in summer). This is deliberate local SEO.
+
+**DPT has NO condition-specific pages.** Advocate has NO condition-specific pages. Only Athletico does this — and it's exactly why they rank.
+
+**Your action:** Create the same pages. But write better copy — 1-on-1 care, Dr. Julie's personal approach, transparent pricing. Athletico's pages are formulaic corporate content. Yours can be authentic.
+
+**Suggested URL structure for Achieve PT:**
+```
+/back-pain-physical-therapy-barrington-il
+/neck-pain-physical-therapy-barrington-il
+/knee-pain-physical-therapy-barrington-il
+/shoulder-pain-physical-therapy-barrington-il
+/tmj-jaw-pain-physical-therapy-barrington-il
+/post-surgical-rehab-barrington-il
+/parkinsons-physical-therapy-barrington-il
+```
+
+**Template for each page (based on Athletico's winning formula):**
+- **Title:** `[Condition] Physical Therapy in Barrington, IL | Achieve PT`
+- **H1:** `[Condition] Physical Therapy in Barrington, IL`
+- **Intro paragraph:** Connect the condition to Barrington life specifically (Makray golf, Citizens Park trails, Barrington school sports, local employers)
+- **H2:** What is [condition] / common causes in our community
+- **H2:** How physical therapy treats [condition]
+- **H2:** What to expect at Achieve PT (1-on-1, Dr. Julie, Tensile Strength Studio)
+- **H2:** FAQ (targets People Also Ask)
+- **CTA:** Book free 20-minute consultation
+
+---
+
 ## Quick Wins Summary (Do These First)
 
 | Priority | Page | Change | Time |
