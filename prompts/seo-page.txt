@@ -1,0 +1,17 @@
+Analyze the JSON files in /data/*.json
+
+Extract:
+- Main headings (H1, H2, H3)
+- Keyword patterns and frequency
+- Service structure and page layout
+- CTA (call-to-action) patterns
+
+Then generate a high-converting SEO landing page for:
+"[Service] in [City]"
+
+Output:
+- Full HTML page with semantic structure
+- SEO-optimized title and meta description
+- Keyword-rich headings
+- Clear CTA sections
+- Save to /projects/[site-name]/index.html

@@ -1,0 +1,11 @@
+Analyze the competitor data in /data/*.json
+
+Extract and summarize:
+- Top keywords used across pages
+- Common service offerings and how they're framed
+- Pricing patterns (if visible)
+- Trust signals (testimonials, certifications, guarantees)
+- Page structure and section order
+- Gaps or weaknesses you can exploit
+
+Output a competitor analysis report with actionable insights.
