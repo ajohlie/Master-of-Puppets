@@ -2,6 +2,7 @@
 **Period:** Nov 10, 2025 – May 10, 2026 (6 months)
 **Tool:** Google Search Console MCP integration
 **Methodology:** Full dataset pulled in single paginated request (row_limit=25000). Standard window for all future audits: 6 months.
+**Post-audit content:** TMJ blog published May 2026 targeting the TMJ cluster — see `achieveptwellness-content-log.md`.
 
 ---
 
