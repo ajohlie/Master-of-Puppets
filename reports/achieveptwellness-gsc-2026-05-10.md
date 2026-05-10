@@ -1,6 +1,7 @@
 # GSC Audit — achieveptwellness.com
-**Period:** Feb 9 – May 10, 2026 (90 days)
+**Period:** Feb 9 – May 8, 2026 (90 days)
 **Tool:** Google Search Console MCP integration
+**Note:** Full 224-query dataset pulled across 3 paginated API requests.
 
 ---
 
@@ -13,22 +14,19 @@
 | CTR | 1.85% | 1.82% | 0% |
 | Avg Position | 30.5 | 17.7 | 19.5 |
 
-> **Note:** Desktop avg position (30.5) is nearly double mobile (17.7). This gap is unusually large and may indicate a desktop-specific indexing or rendering issue worth investigating.
+> **Note:** Desktop avg position (30.5) is nearly double mobile (17.7). Unusually large gap — possible desktop rendering or structured data issue.
 
 ---
 
 ## Critical Issues
 
 ### 1. Sitemap — 0 Pages Indexed
-- Sitemap submitted: `2026-03-01`
-- Pages indexed from sitemap: **0**
-- URL: `https://www.achieveptwellness.com/sitemap.xml`
-- **Action:** Verify sitemap is valid XML, all URLs return 200, and resubmit via GSC. Check for crawl budget issues or noindex tags on key pages.
+- Submitted: `2026-03-01` · Pages indexed: **0**
+- **Action:** Validate sitemap XML, confirm all URLs return 200, resubmit via GSC. Check for noindex tags on key pages.
 
 ### 2. `/services/old` Indexed in Google
 - 13 impressions, position 26.9, 0 clicks
-- An orphaned "old" page is surfacing in search results
-- **Action:** 301 redirect to `/services` or add `noindex` meta tag.
+- **Action:** 301 redirect to `/services` or add `noindex`.
 
 ---
 
@@ -47,22 +45,6 @@
 
 ---
 
-## High-Opportunity Pages (High Impressions, Poor Performance)
-
-### TMJ Page — 1,289 impressions, position 65.9
-The highest-impression page on the site is buried on page 6+. Biggest single SEO opportunity.
-- **Action:** Audit content depth, add FAQ schema, build internal links from other treatment pages.
-
-### Joint Mobilization Page — 713 impressions, position 17.7
-Just off page 1. A small push could 5-10x clicks.
-- **Action:** Tighten title tag and H1 around "joint mobilization and manipulation," improve internal linking.
-
-### Contact Page — 497 impressions, position 18.5, 0.60% CTR
-High impressions with very low CTR. Meta description likely not compelling.
-- **Action:** Rewrite meta description with a CTA (e.g., "Book a free consult with Barrington's PT specialists").
-
----
-
 ## Top Queries by Clicks
 
 | Query | Clicks | Impressions | CTR | Position |
@@ -75,27 +57,75 @@ High impressions with very low CTR. Meta description likely not compelling.
 
 ---
 
-## High-Opportunity Queries (High Impressions, 0 Clicks)
+## High-Opportunity Queries — Full Dataset
+
+Sorted by impressions. These were missed in the initial 25-row pull.
 
 | Query | Impressions | Position | Notes |
 |-------|-------------|----------|-------|
-| barrington physical therapy | 65 | 13.5 | Core local keyword, page 2 |
-| joint manipulation | 88 | 44.7 | Too deep, needs targeted page |
-| difference between mobilization and manipulation | 33 | 3.1 | Ranking #3 but 0 clicks — check title/snippet |
-| custom therapeutic exercise plan south barrington | 62 | 19.8 | Local service page opportunity |
+| tmj therapy | **540** | 84.2 | Buried on page 8 — biggest query opportunity on site |
+| tmd therapies | **229** | 78.5 | Page 8, similar issue |
+| physical therapy barrington il | **209** | 15.9 | Geo variant of top local keyword, page 2 |
+| tmd therapy | **189** | 63.4 | Page 6 — TMJ content cluster badly underranking |
+| physical therapy barrington | 214 | 15.0 | Core local keyword, page 2 |
+| joint manipulation | 88 | 44.7 | Page 4-5, needs dedicated targeting |
+| physical therapy berwyn il | 88 | 63.6 | Wrong geo — not the target market |
+| physical therapist barrington | 66 | 30.7 | Local branded variant, page 3 |
+| barrington physical therapy | 65 | 13.5 | Page 2, high commercial intent |
+| manipulation of joints | 63 | 38.4 | Page 4 |
+| custom therapeutic exercise plan south barrington | 62 | 19.8 | Page 2, local service query |
+| physical therapy near me | 56 | **6.7** | Page 1 — 0 clicks at pos 6.7 suggests weak title/snippet |
+| achieve pt | 52 | 13.8 | Branded, page 2 — should be top 3 |
+| orthopedic rehabilitation barrington il | 44 | 10.3 | Page 1, 0 clicks — check meta description |
+| tmj trigger point therapy north barrington il | 39 | 20.9 | Local TMJ query with commercial intent |
 | iastm cupping | 34 | 16.7 | IASTM page needs cupping content |
-| achieve pt | 52 | 13.8 | Branded, should rank top 3 |
-| achieve therapy | 26 | 7.2 | Branded, 0 clicks — meta description issue |
-| how to cure tmj ballwin mo | 11 | 75.7 | Wrong geo — ranking for out-of-market TMJ queries |
+| difference between mobilization and manipulation | 33 | 3.1 | Position 3, 0 clicks — title/snippet issue |
+| trigger point dry needling physical therapy | 24 | 70.0 | Page 7, dry needling page underranking |
+| trigger point dry needling | 21 | 72.4 | Same issue |
+| parkinson's disease barrington | 20 | 29.8 | Page 3, neuro PT opportunity |
+
+---
+
+## TMJ/TMD Content Cluster Analysis
+
+The TMJ page (`/treatment-techniques/tmd-tmj`) generates 1,289 impressions — but almost entirely from queries ranking on pages 6–9. This is a content authority problem, not a keyword targeting problem.
+
+| Query | Impressions | Position |
+|-------|-------------|----------|
+| tmj therapy | 540 | 84.2 |
+| tmd therapies | 229 | 78.5 |
+| tmd therapy | 189 | 63.4 |
+| therapy for tmj disorder | 19 | 80.3 |
+| tmj trigger point therapy north barrington il | 39 | 20.9 |
+| therapy for tmj | 10 | 94.9 |
+| tmj/tmd treatment | 7 | 85.9 |
+| sound therapy temporomandibular joint disorder | 13 | 60.9 |
+
+**Total TMJ cluster impressions: ~1,046 across 15+ queries, avg position ~75**
+
+The page is being found but Google doesn't trust it enough to surface it. Needs content depth, E-E-A-T signals, FAQ schema, and internal links from other treatment pages.
+
+---
+
+## Notable Signal: "physical therapy near me" — position 6.7, 0 clicks
+
+Ranking on page 1 for a high-intent generic query and getting 0 clicks is unusual. Likely causes:
+- Title tag doesn't match the query intent
+- Meta description isn't compelling enough vs. competitors
+- Google Business Profile may be dominating the results and absorbing clicks
+
+**Action:** Check SERP appearance for this query directly. Optimize title + meta description for this page.
 
 ---
 
 ## Recommendations (Priority Order)
 
-1. **Fix sitemap indexing** — 0 indexed pages from sitemap is a foundational blocker
-2. **Redirect/noindex `/services/old`** — clean up crawl budget and brand confusion
-3. **TMJ page overhaul** — 1,289 impressions at position 65 is the biggest upside on the site
-4. **Push joint mobilization page to page 1** — 713 impressions at 17.7, minor optimization could unlock significant clicks
-5. **Improve contact page meta description** — 497 impressions, 0.60% CTR is leaving conversions on the table
-6. **Target "barrington physical therapy" aggressively** — 214 impressions at position 15, core local keyword
-7. **Investigate desktop vs. mobile position gap** — 30.5 vs 17.7 is a red flag for rendering or structured data issues
+1. **Fix sitemap indexing** — 0 indexed pages is a foundational blocker for everything else
+2. **Redirect/noindex `/services/old`** — crawl budget and brand confusion
+3. **TMJ content overhaul** — 1,046+ impressions across 15 queries averaging position 75; needs content depth, FAQ schema, E-E-A-T
+4. **Audit "physical therapy near me" snippet** — page 1 ranking with 0 clicks is a wasted opportunity
+5. **Push "physical therapy barrington il" + "barrington physical therapy" to page 1** — 423 combined impressions, core local keywords both sitting on page 2
+6. **Joint mobilization page** — 713 impressions at position 17.7, minor optimization could unlock page 1
+7. **Dry needling content** — two queries with ~45 combined impressions at positions 70-72; page needs depth
+8. **Contact page meta description** — 497 impressions, 0.60% CTR; rewrite with a direct CTA
+9. **Investigate desktop vs. mobile position gap** — 30.5 vs 17.7 is a red flag
