@@ -1,0 +1,30 @@
+name: Weekly report → Discord
+
+on:
+  push:
+    branches: [main]
+    paths: ["reports/achieve-pt/weekly-check-*.md"]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Post TL;DR to Discord
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          # Reports added or changed by this push
+          files=$(git diff --name-only HEAD~1 HEAD -- 'reports/achieve-pt/weekly-check-*.md')
+          for f in $files; do
+            [ -f "$f" ] || continue
+            # Section between "## TL;DR" and the next "## " heading
+            tldr=$(awk '/^## TL;DR/{on=1; next} /^## /{on=0} on' "$f" | sed '/^\s*$/d' | head -c 1500)
+            [ -n "$tldr" ] || tldr="(no TL;DR section found)"
+            url="${{ github.server_url }}/${{ github.repository }}/blob/${{ github.sha }}/$f"
+            msg=$(printf '**Achieve PT weekly check** — `%s`\n%s\n\nFull report: %s' "$(basename "$f" .md)" "$tldr" "$url")
+            jq -n --arg c "$msg" '{content: $c}' | curl -sSf -H "Content-Type: application/json" -d @- "$DISCORD_WEBHOOK_URL"
+          done
